@@ -1,0 +1,1 @@
+all: maze.cpp; clang++ -std=c++11 maze.cpp -lSDL_image -lSDL_ttf -lSDL_mixer `pkg-config --cflags sdl` `pkg-config --libs sdl`

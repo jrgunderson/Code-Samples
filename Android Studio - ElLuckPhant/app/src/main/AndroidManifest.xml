@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.something.jrgun.elluckphant">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/logo"
+        android:label="BreakEven"
+        android:roundIcon="@drawable/logo"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity android:name="com.something.jrgun.elluckphant.controller.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="com.something.jrgun.elluckphant.controller.MainMenuActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity android:name="com.something.jrgun.elluckphant.controller.OnePlayActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity android:name="com.something.jrgun.elluckphant.controller.FivePlayActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity android:name=".controller.Pick5ChartActivity"
+            android:screenOrientation= "landscape">
+        </activity>
+
+        <activity android:name=".controller.MegaChartActivity"
+            android:screenOrientation= "landscape">
+        </activity>
+
+
+    </application>
+
+</manifest>

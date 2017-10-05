@@ -1,0 +1,83 @@
+Is it a mammal?
+Is it a dinosaur?
+Is it a reptile?
+Is it an amphibian?
+Is it a fish?
+Is it a bird?
+Butterfly
+~
+~
+Is it colorful?
+Pelican
+~
+~
+Parrot
+~
+~
+Shark
+~
+~
+Frog
+~
+~
+Does it shed it's tail?
+Turtle
+~
+~
+Lizard
+~
+~
+Can it fly?
+Velociraptor
+~
+~
+Pterodactyl
+~
+~
+Does it live under water?
+Does it have fur?
+Does it have a shell?
+Does it have a trunk?
+Hippopotamus
+~
+~
+Elephant
+~
+~
+Armadillo
+~
+~
+Is it part of the felidea (feline) family?
+Would you be scared it might kill you if you were camping?
+Does it have stripes?
+Fox
+~
+~
+Zebra
+~
+~
+Is it dog-like?
+Does it live in Australia?
+Bear
+~
+~
+Kangaroo
+~
+~
+Wolf
+~
+~
+Is it a large feline?
+Cat
+~
+~
+Tiger
+~
+~
+Is it very large?
+Dolphin
+~
+~
+Whale
+~
+~
