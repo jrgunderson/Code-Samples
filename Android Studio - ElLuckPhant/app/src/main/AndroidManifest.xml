@@ -10,7 +10,8 @@
         android:label="BreakEven"
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:name="android.support.multidex.MultiDexApplication">
 
         <activity android:name="com.something.jrgun.elluckphant.controller.MainActivity">
             <intent-filter>
