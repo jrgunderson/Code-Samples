@@ -522,7 +522,7 @@ class AnalyzeSQL():
     def run(self):
         """ MAIN """
         
-        print("Doing Stuff...")
+        print("Analyzing Database...")
         
         
         # LOAD pal3db into working :memory:
@@ -553,7 +553,7 @@ class AnalyzeSQL():
         self.cursor.close()
         self.connection.close()
         
-        print("...Stuff Did")
+        print("...Database Analyzed")
         
     
      
