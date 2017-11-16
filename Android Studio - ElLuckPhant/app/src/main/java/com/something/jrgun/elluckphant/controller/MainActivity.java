@@ -10,6 +10,8 @@ import com.something.jrgun.elluckphant.R;
 import com.something.jrgun.elluckphant.model.CalculateStats;
 import com.something.jrgun.elluckphant.model.Last25;
 
+import java.io.IOException;
+
 public class MainActivity extends AppCompatActivity {
 
     // check for updates in background

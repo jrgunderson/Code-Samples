@@ -32,7 +32,7 @@ public class CalculateStats
     {
         mydatabase = FirebaseDatabase.getInstance();
         fill5stats();
-        fillMegaStats(); // will finish first since less complicated code
+        fillMegaStats();
     }
 
 
@@ -68,7 +68,7 @@ public class CalculateStats
                 print("pick 5 stats: " + pick5stats);
                 print("Num of Lottos from Pick5: " + checkNumOfLottos);
 
-                // if for some reason fill5 is called before fillMega
+                // if fill5 is called before fillMega
                 if(numOfLottos==0)
                 {
                     numOfLottos = checkNumOfLottos;
@@ -81,6 +81,7 @@ public class CalculateStats
                     Log.e("WARNING", "NUM OF LOTTOS DO NOT MATCH");
                     System.out.println(numOfLottos + " " + checkNumOfLottos);
                 }
+
 
             }
 
@@ -101,7 +102,7 @@ public class CalculateStats
             @Override
             public void onDataChange(DataSnapshot dataSnapshot)
             {
-                if(numOfLottos != 0){ numOfLottos = 0;}
+                double checkNumOfLottos = 0;
 
                 megaBstats = new HashMap<>();
 
@@ -115,17 +116,36 @@ public class CalculateStats
                 for(String s : split)
                 {
                     int num = Integer.parseInt(s);
-                    megaBstats.put(num, megaBstats.get(num) + 1); // increment stat count;
 
-                    ++numOfLottos;
+                    // do to restructure of MegaMillions
+                    // must ignore mega ball numbers pulled after 28.Oct.2017
+                    if(num <= megaBstats.size()) {
+                        megaBstats.put(num, megaBstats.get(num) + 1); // increment stat count;
+                    }
+
+                    ++checkNumOfLottos;
                 }
 
                 HoldStats.getInstance().setMegaBstats(megaBstats);
-                HoldStats.getInstance().setNumOfLottos(numOfLottos);
+
+                // if fillMega is called before pick5
+                if(numOfLottos==0)
+                {
+                    numOfLottos = checkNumOfLottos;
+                    HoldStats.getInstance().setNumOfLottos(numOfLottos);
+                }
+
+                // Quality Assurance
+                if(checkNumOfLottos != numOfLottos)
+                {
+                    Log.e("WARNING", "NUM OF LOTTOS DO NOT MATCH");
+                    System.out.println(numOfLottos + " " + checkNumOfLottos);
+                }
 
                 print("megaball stats: " + megaBstats);
                 print("Num of Lottos from Mega: " + numOfLottos);
                 print("Expected number of pulls: " + numOfLottos/15.0);
+
             }
 
             @Override
