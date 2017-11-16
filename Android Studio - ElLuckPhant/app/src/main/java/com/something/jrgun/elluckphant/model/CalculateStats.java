@@ -17,7 +17,11 @@ import java.util.HashMap;
  *
  * My Firebase database contains lists of all previously pulled lottery numbers
  * (note: only winning numbers past 10/25/2013,
- *  since that's when the format changed to numbers (1 - 75) for Pick 5  &&  (1 - 15) for Powerball )
+ *  since that's when the format changed to numbers (1 - 75) for Pick 5  &&  (1 - 15) for Megaball )
+ *
+ * Ammendment:
+ *  As of 28.Oct.2017 the number format changed to (1 - 70) for Pick 5  &&  (1 - 25) for Megaball )
+ *
  */
 
 public class CalculateStats
@@ -26,6 +30,8 @@ public class CalculateStats
     private static HashMap<Integer, Integer> pick5stats; // keeps track of how many times
     private static HashMap<Integer, Integer> megaBstats; // each ball has been picked
     private double numOfLottos;
+    private int MaxPick5 = (int) HoldStats.getInstance().getMaxPick5();
+    private int MaxMega = (int) HoldStats.getInstance().getMaxMega();
 
     // default constructor
     public CalculateStats()
@@ -47,7 +53,7 @@ public class CalculateStats
             {
                 pick5stats = new HashMap<>();
 
-                for (int i = 1; i <= 75; ++i) {
+                for (int i = 1; i <= MaxPick5; ++i) {
                     pick5stats.put(i, 0); // initialize with zeros
                 }
 
@@ -57,16 +63,18 @@ public class CalculateStats
                 for(String s : split)
                 {
                     int num = Integer.parseInt(s);
-                    pick5stats.put(num, pick5stats.get(num) + 1); // increment stat count;
+
+                    // do to restructure of MegaMillions
+                    // must ignore mega ball numbers pulled after 28.Oct.2017
+                    if(num <= MaxPick5){
+                        pick5stats.put(num, pick5stats.get(num) + 1); // increment stat count;
+                    }
 
                     ++checkNumOfLottos;
                 }
 
                 HoldStats.getInstance().setPick5stats(pick5stats);
                 checkNumOfLottos /= 5;
-
-                print("pick 5 stats: " + pick5stats);
-                print("Num of Lottos from Pick5: " + checkNumOfLottos);
 
                 // if fill5 is called before fillMega
                 if(numOfLottos==0)
@@ -81,6 +89,10 @@ public class CalculateStats
                     Log.e("WARNING", "NUM OF LOTTOS DO NOT MATCH");
                     System.out.println(numOfLottos + " " + checkNumOfLottos);
                 }
+
+                print("pick 5 stats: " + pick5stats);
+                print("Num of Lottos from Pick5: " + checkNumOfLottos);
+                print("Expected number of pulls: " + numOfLottos/ (MaxPick5/5.0));
 
 
             }
@@ -106,7 +118,7 @@ public class CalculateStats
 
                 megaBstats = new HashMap<>();
 
-                for( int i=1; i<=15; ++i )
+                for(int i = 1; i<= MaxMega; ++i )
                 {
                     megaBstats.put( i, 0 ); // initialize with zeros
                 }
@@ -116,12 +128,7 @@ public class CalculateStats
                 for(String s : split)
                 {
                     int num = Integer.parseInt(s);
-
-                    // do to restructure of MegaMillions
-                    // must ignore mega ball numbers pulled after 28.Oct.2017
-                    if(num <= megaBstats.size()) {
-                        megaBstats.put(num, megaBstats.get(num) + 1); // increment stat count;
-                    }
+                    megaBstats.put(num, megaBstats.get(num) + 1); // increment stat count
 
                     ++checkNumOfLottos;
                 }
@@ -144,7 +151,7 @@ public class CalculateStats
 
                 print("megaball stats: " + megaBstats);
                 print("Num of Lottos from Mega: " + numOfLottos);
-                print("Expected number of pulls: " + numOfLottos/15.0);
+                print("Expected number of pulls: " + numOfLottos/ MaxMega);
 
             }
 

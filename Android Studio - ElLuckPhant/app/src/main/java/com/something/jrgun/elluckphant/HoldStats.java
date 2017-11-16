@@ -17,6 +17,8 @@ public class HoldStats
     private static HashMap<Integer, Integer> pick5stats = null;
     private static HashMap<Integer, Integer> megaBstats = null;
     private double numOfLottos;
+    private double MaxPick5 = 70;
+    private double MaxMega = 25;
 
     // retrieves the instance from anywhere
     public static HoldStats getInstance() {
@@ -40,6 +42,10 @@ public class HoldStats
     public double getNumOfLottos() {
         return numOfLottos;
     }
+
+    public double getMaxPick5(){ return MaxPick5; }
+
+    public double getMaxMega(){ return MaxMega; }
 
 
     // setters

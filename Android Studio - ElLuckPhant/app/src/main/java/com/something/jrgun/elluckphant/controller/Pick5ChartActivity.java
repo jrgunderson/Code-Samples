@@ -29,6 +29,7 @@ import java.util.Map;
 public class Pick5ChartActivity extends AppCompatActivity {
 
     BarChart barChart;
+    private static double MaxBalls = HoldStats.getInstance().getMaxPick5();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,7 +66,7 @@ public class Pick5ChartActivity extends AppCompatActivity {
         if (pick5stats != null) {
 
             // ratio that each number should be picked
-            double ratio = HoldStats.getInstance().getNumOfLottos() / 15.0;
+            double ratio = HoldStats.getInstance().getNumOfLottos() / (MaxBalls/5);
 
             // save (x,y) values
             ArrayList<BarEntry> evenvalues = new ArrayList<>();
@@ -99,7 +100,7 @@ public class Pick5ChartActivity extends AppCompatActivity {
             // put x-axis on bottom
             XAxis xAxis = barChart.getXAxis();
             xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
-            xAxis.setLabelCount(75);
+            xAxis.setLabelCount((int) MaxBalls);
 
 
             // add limit line

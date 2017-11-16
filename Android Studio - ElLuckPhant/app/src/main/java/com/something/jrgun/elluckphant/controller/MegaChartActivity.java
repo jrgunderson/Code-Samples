@@ -28,6 +28,7 @@ import java.util.Map;
 public class MegaChartActivity extends AppCompatActivity {
 
     BarChart barChart;
+    private static double MaxBalls = HoldStats.getInstance().getMaxMega();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,7 +65,7 @@ public class MegaChartActivity extends AppCompatActivity {
         if (megaBstats != null)
         {
             // ratio that each number should be picked
-            double ratio = HoldStats.getInstance().getNumOfLottos()/15.0;
+            double ratio = HoldStats.getInstance().getNumOfLottos()/ MaxBalls;
 
             // save (x,y) values
             ArrayList<BarEntry> evenvalues = new ArrayList<>();
@@ -101,7 +102,7 @@ public class MegaChartActivity extends AppCompatActivity {
             // put x-axis on bottom
             XAxis xAxis = barChart.getXAxis();
             xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
-            xAxis.setLabelCount(15);
+            xAxis.setLabelCount((int)MaxBalls);
 
 
             // add limit line

@@ -2,24 +2,13 @@ package com.something.jrgun.elluckphant.model;
 
 import android.util.Log;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseException;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.something.jrgun.elluckphant.HoldStats;
-import com.something.jrgun.elluckphant.R;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 import java.util.Collections;
-import java.util.Scanner;
 
 /**
  * Creates arrays of numbers to display
@@ -36,6 +25,8 @@ public class GenerateNumbers
     private ArrayList<Integer> nums; // array for pick 5 and mega ball to be set for default constuctor
     private HashMap<Integer, Integer> pick5stats; // keeps track of how many times
     private HashMap<Integer, Integer> megaBstats; // each ball has been picked
+    private static int MaxPick5 = 70;
+    private static int MaxMega = 25;
 
 
     // default constructor - generates numbers randomly
@@ -85,16 +76,16 @@ public class GenerateNumbers
 
         for(int i=0; i<5; ++i )
         {
-            int n =  rand.nextInt(75)+1;
+            int n =  rand.nextInt(MaxPick5)+1;
             while( randNums.contains(n))
             {
-                n = rand.nextInt(75)+1;
+                n = rand.nextInt(MaxPick5)+1;
             }
             randNums.add( n );
         }
         Collections.sort(randNums);
 
-        randNums.add(rand.nextInt(15)+1 );
+        randNums.add(rand.nextInt(MaxMega)+1 );
 
         return randNums;
     }
@@ -112,9 +103,10 @@ public class GenerateNumbers
         }
         else{
             ArrayList<Integer> randNums = new ArrayList<>();
-            double ratio = 1 / 15.0; // (5/75) == (1/15)
 
             // Generate Pick 5
+            double ratio = 5.0 / MaxPick5;
+
             for (int i = 0; i < 5; ++i)
             {
                 int num = rand.nextInt(100); // no number is favored when modding by multiple of 10
@@ -122,7 +114,7 @@ public class GenerateNumbers
 
                 // continue randomly generating number if:
                 // a. out of range, b. number has been picked above expected ratio, c. already chosen
-                while (num > 75 || (pick5stats.get(num) / numOfLottos) > ratio || randNums.contains(num)) {
+                while (num > MaxPick5 || (pick5stats.get(num) / numOfLottos) > ratio || randNums.contains(num)) {
                     num = rand.nextInt(100);
                     ++num;
                 }
@@ -133,9 +125,11 @@ public class GenerateNumbers
             Collections.sort(randNums); // sort for sequential output
 
             // generate Mega Ball
+            ratio = 1.0 / MaxMega;
+
             int num = rand.nextInt(100);
             ++num;
-            while (num > 15 || (megaBstats.get(num) / numOfLottos) > ratio) {
+            while (num > MaxMega || (megaBstats.get(num) / numOfLottos) > ratio) {
                 num = rand.nextInt(100);
                 ++num;
             }
@@ -163,9 +157,10 @@ public class GenerateNumbers
         ArrayList<ArrayList<Integer>> play5 = new ArrayList<ArrayList<Integer>>(); // only stores 5 lotto picks
         ArrayList<Integer> play5pick5 = new ArrayList<>(); // stores all statistically avail pick 5 nums
         ArrayList<Integer> play5mega = new ArrayList<>(); // stores all statistically avail mega nums
-        double ratio = 1/15.0; // (5/75) == (1/15)
 
         // generate Pick 5 numbers
+        double ratio = 5.0 / MaxPick5;
+        print("asdfasdfasdfadf"+ratio);
         for(Map.Entry<Integer, Integer> e : pick5stats.entrySet())
         {
             if( e.getValue()/numOfLottos < ratio )
@@ -178,6 +173,8 @@ public class GenerateNumbers
         print(play5pick5);
 
         // generate Mega Ball numbers
+        ratio = 1.0 / MaxMega;
+        print("asdfasdfasdfadf"+ratio);
         for(Map.Entry<Integer, Integer> e : megaBstats.entrySet())
         {
             if( e.getValue()/numOfLottos < ratio )
