@@ -58,59 +58,45 @@ public class OnePlayActivity extends AppCompatActivity {
         });
 
 
-        // load stats
-        HashMap<Integer, Integer> pick5stats = HoldStats.getInstance().getPick5stats();
+        // generate 1 set of lotto numbers
+        Button generate = (Button) findViewById(R.id.generate1);
+        generate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-        // if loading stats does not fail
-        if (pick5stats != null) {
-
-
-            // generate 1 set of lotto numbers
-            Button generate = (Button) findViewById(R.id.generate1);
-            generate.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-
-                    // reset visibility on ticket
-                    for (int i = 0; i < pick5ticket.size(); ++i) {
-                        ImageView iv = pick5ticket.get(i);
-                        if (iv.getVisibility() == View.VISIBLE) {
-                            iv.setVisibility(View.INVISIBLE);
-                        }
+                // reset visibility on ticket
+                for (int i = 0; i < pick5ticket.size(); ++i) {
+                    ImageView iv = pick5ticket.get(i);
+                    if (iv.getVisibility() == View.VISIBLE) {
+                        iv.setVisibility(View.INVISIBLE);
                     }
-                    for (int i = 0; i < megaticket.size(); ++i) {
-                        ImageView iv = megaticket.get(i);
-                        if (iv.getVisibility() == View.VISIBLE) {
-                            iv.setVisibility(View.INVISIBLE);
-                        }
-                    }
-
-
-                    // generate lotto numbers
-                    ArrayList<Integer> lottoNumbers = new GenerateNumbers().getNums();
-                    System.out.println(lottoNumbers);
-
-
-                    // update ball TextViews with lotto numbers
-                    for (int i = 0; i < 5; ++i) {
-                        int number = lottoNumbers.get(i);
-                        balls.get(i).setText(Integer.toString(number));
-                        pick5ticket.get(number - 1).setVisibility(View.VISIBLE); // -1 because array 0 indexed
-                    }
-                    int number = lottoNumbers.get(5);
-                    balls.get(5).setText(Integer.toString(number));
-                    megaticket.get(number - 1).setVisibility(View.VISIBLE); // -1 because array 0 indexed
-
                 }
-            });
+                for (int i = 0; i < megaticket.size(); ++i) {
+                    ImageView iv = megaticket.get(i);
+                    if (iv.getVisibility() == View.VISIBLE) {
+                        iv.setVisibility(View.INVISIBLE);
+                    }
+                }
 
-        // if problem loading stats
-        }else{
-            Log.e("WARNING", "FAIL LOADING STATS");
 
-            // default to main
-            startActivity( new Intent(OnePlayActivity.this, MainMenuActivity.class) );
-        }
+                // generate lotto numbers
+                ArrayList<Integer> lottoNumbers = new GenerateNumbers().getNums();
+                System.out.println(lottoNumbers);
+
+
+                // update ball TextViews with lotto numbers
+                for (int i = 0; i < 5; ++i) {
+                    int number = lottoNumbers.get(i);
+                    balls.get(i).setText(Integer.toString(number));
+                    pick5ticket.get(number - 1).setVisibility(View.VISIBLE); // -1 because array 0 indexed
+                }
+                int number = lottoNumbers.get(5);
+                balls.get(5).setText(Integer.toString(number));
+                megaticket.get(number - 1).setVisibility(View.VISIBLE); // -1 because array 0 indexed
+
+            }
+        });
+
 
     } // end onCreate
 
@@ -200,11 +186,6 @@ public class OnePlayActivity extends AppCompatActivity {
         pick5ticket.add( (ImageView) findViewById(R.id.t68) );
         pick5ticket.add( (ImageView) findViewById(R.id.t69) );
         pick5ticket.add( (ImageView) findViewById(R.id.t70) );
-        pick5ticket.add( (ImageView) findViewById(R.id.t71) );
-        pick5ticket.add( (ImageView) findViewById(R.id.t72) );
-        pick5ticket.add( (ImageView) findViewById(R.id.t73) );
-        pick5ticket.add( (ImageView) findViewById(R.id.t74) );
-        pick5ticket.add( (ImageView) findViewById(R.id.t75) );
         megaticket = new ArrayList<>();
         megaticket.add( (ImageView) findViewById(R.id.m1) );
         megaticket.add( (ImageView) findViewById(R.id.m2) );

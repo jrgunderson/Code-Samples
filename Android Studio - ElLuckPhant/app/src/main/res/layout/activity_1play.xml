@@ -169,15 +169,35 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1"/>
+                android:layout_weight=".25"/>
 
-            // Numbers 1 - 12
+            // Numbers 1 - 8
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:orientation="horizontal">
 
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp" />
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp" />
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp" />
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp" />
                 <ImageView
                     android:id="@+id/t1"
                     android:layout_width="0dp"
@@ -242,6 +262,15 @@
                     android:layout_margin="5dp"
                     android:src="#000000"
                     android:visibility="invisible"/>
+            </LinearLayout>
+
+            // Numbers 9 - 20
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
                 <ImageView
                     android:id="@+id/t9"
                     android:layout_width="0dp"
@@ -274,15 +303,6 @@
                     android:layout_margin="5dp"
                     android:src="#000000"
                     android:visibility="invisible"/>
-            </LinearLayout>
-
-            // Numbers 13 - 24
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:orientation="horizontal">
-
                 <ImageView
                     android:id="@+id/t13"
                     android:layout_width="0dp"
@@ -347,6 +367,15 @@
                     android:layout_margin="5dp"
                     android:src="#000000"
                     android:visibility="invisible"/>
+            </LinearLayout>
+
+            // Numbers 21 - 32
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
                 <ImageView
                     android:id="@+id/t21"
                     android:layout_width="0dp"
@@ -379,15 +408,6 @@
                     android:layout_margin="5dp"
                     android:src="#000000"
                     android:visibility="invisible"/>
-            </LinearLayout>
-
-            // Numbers 25 - 36
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:orientation="horizontal">
-
                 <ImageView
                     android:id="@+id/t25"
                     android:layout_width="0dp"
@@ -452,6 +472,15 @@
                     android:layout_margin="5dp"
                     android:src="#000000"
                     android:visibility="invisible"/>
+            </LinearLayout>
+
+            // Numbers 33 - 44
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
                 <ImageView
                     android:id="@+id/t33"
                     android:layout_width="0dp"
@@ -484,15 +513,6 @@
                     android:layout_margin="5dp"
                     android:src="#000000"
                     android:visibility="invisible"/>
-            </LinearLayout>
-
-            // Numbers 37 - 48
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:orientation="horizontal">
-
                 <ImageView
                     android:id="@+id/t37"
                     android:layout_width="0dp"
@@ -557,6 +577,15 @@
                     android:layout_margin="5dp"
                     android:src="#000000"
                     android:visibility="invisible"/>
+            </LinearLayout>
+
+            // Numbers 45 - 56
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
                 <ImageView
                     android:id="@+id/t45"
                     android:layout_width="0dp"
@@ -589,15 +618,6 @@
                     android:layout_margin="5dp"
                     android:src="#000000"
                     android:visibility="invisible"/>
-            </LinearLayout>
-
-            // Numbers 49 - 60
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:orientation="horizontal">
-
                 <ImageView
                     android:id="@+id/t49"
                     android:layout_width="0dp"
@@ -662,6 +682,15 @@
                     android:layout_margin="5dp"
                     android:src="#000000"
                     android:visibility="invisible"/>
+            </LinearLayout>
+
+            // Numbers 57 - 68
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
                 <ImageView
                     android:id="@+id/t57"
                     android:layout_width="0dp"
@@ -694,15 +723,6 @@
                     android:layout_margin="5dp"
                     android:src="#000000"
                     android:visibility="invisible"/>
-            </LinearLayout>
-
-            // Numbers 61 - 72
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:orientation="horizontal">
-
                 <ImageView
                     android:id="@+id/t61"
                     android:layout_width="0dp"
@@ -767,6 +787,16 @@
                     android:layout_margin="5dp"
                     android:src="#000000"
                     android:visibility="invisible"/>
+            </LinearLayout>
+
+
+            // Numbers 69 - 02
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
                 <ImageView
                     android:id="@+id/t69"
                     android:layout_width="0dp"
@@ -784,55 +814,6 @@
                     android:src="#000000"
                     android:visibility="invisible"/>
                 <ImageView
-                    android:id="@+id/t71"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="match_parent"
-                    android:layout_margin="5dp"
-                    android:src="#000000"
-                    android:visibility="invisible"/>
-                <ImageView
-                    android:id="@+id/t72"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="match_parent"
-                    android:layout_margin="5dp"
-                    android:src="#000000"
-                    android:visibility="invisible"/>
-            </LinearLayout>
-
-            // Numbers 73 - 75
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:id="@+id/t73"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="match_parent"
-                    android:layout_margin="5dp"
-                    android:src="#000000"
-                    android:visibility="invisible"/>
-                <ImageView
-                    android:id="@+id/t74"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="match_parent"
-                    android:layout_margin="5dp"
-                    android:src="#000000"
-                    android:visibility="invisible"/>
-                <ImageView
-                    android:id="@+id/t75"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="match_parent"
-                    android:layout_margin="5dp"
-                    android:src="#000000"
-                    android:visibility="invisible"/>
-                <ImageView
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="match_parent"
@@ -872,20 +853,6 @@
                     android:layout_weight="1"
                     android:layout_height="match_parent"
                     android:layout_margin="5dp" />
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="match_parent"
-                    android:layout_margin="5dp" />
-            </LinearLayout>
-
-            // Numbers 1 - 12
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:orientation="horizontal">
-
                 <ImageView
                     android:id="@+id/m1"
                     android:layout_width="0dp"
@@ -902,6 +869,16 @@
                     android:layout_margin="5dp"
                     android:src="#000000"
                     android:visibility="invisible"/>
+            </LinearLayout>
+
+
+            // Numbers 3 - 14
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
                 <ImageView
                     android:id="@+id/m3"
                     android:layout_width="0dp"
@@ -982,15 +959,6 @@
                     android:layout_margin="5dp"
                     android:src="#000000"
                     android:visibility="invisible"/>
-            </LinearLayout>
-
-            // Numbers 13 - 24
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:orientation="horizontal">
-
                 <ImageView
                     android:id="@+id/m13"
                     android:layout_width="0dp"
@@ -1007,6 +975,15 @@
                     android:layout_margin="5dp"
                     android:src="#000000"
                     android:visibility="invisible"/>
+            </LinearLayout>
+
+            // Numbers 15 - 25
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
                 <ImageView
                     android:id="@+id/m15"
                     android:layout_width="0dp"
@@ -1087,16 +1064,6 @@
                     android:layout_margin="5dp"
                     android:src="#000000"
                     android:visibility="invisible"/>
-            </LinearLayout>
-
-
-            // Numbers 25
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:orientation="horizontal">
-
                 <ImageView
                     android:id="@+id/m25"
                     android:layout_width="0dp"
@@ -1110,65 +1077,10 @@
                     android:layout_weight="1"
                     android:layout_height="match_parent"
                     android:layout_margin="5dp"/>
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="match_parent"
-                    android:layout_margin="5dp"/>
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="match_parent"
-                    android:layout_margin="5dp"/>
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="match_parent"
-                    android:layout_margin="5dp"/>
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="match_parent"
-                    android:layout_margin="5dp"/>
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="match_parent"
-                    android:layout_margin="5dp"/>
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="match_parent"
-                    android:layout_margin="5dp"/>
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="match_parent"
-                    android:layout_margin="5dp"/>
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="match_parent"
-                    android:layout_margin="5dp"/>
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="match_parent"
-                    android:layout_margin="5dp"/>
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="match_parent"
-                    android:layout_margin="5dp"/>
             </LinearLayout>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight=".1"/>
 
         </LinearLayout>
-
     </RelativeLayout>
 
 

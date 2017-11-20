@@ -48,7 +48,7 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:textSize="16dp"
-            android:text="View Pick 5 Statistics"/>
+            android:text="View Pick 5 Statistics         (internet needed)"/>
 
         <Button
             android:id="@+id/toMegaStatsFromMain"
@@ -60,7 +60,7 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:textSize="16dp"
-            android:text="View Mega Ball statistics"/>
+            android:text="View Mega Ball statistics      (internet needed)"/>
 
     </LinearLayout>
 

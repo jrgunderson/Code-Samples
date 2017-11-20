@@ -14,6 +14,7 @@ import java.util.Collections;
  * Creates arrays of numbers to display
  *
  * Stats should already be calculated by the time this class is called
+ *      - if not, random numbers generated
  */
 
 public class GenerateNumbers
@@ -69,23 +70,39 @@ public class GenerateNumbers
 
 
 
-    // generate lotto numbers 'randomly'
+    // generate lotto numbers randomly
+    // does not mod since that has been proven to be bias
     public static ArrayList<Integer> generateRandom()
     {
         ArrayList<Integer> randNums = new ArrayList<>();
 
-        for(int i=0; i<5; ++i )
+        // randomly generate pick5 numbers
+        for (int i = 0; i < 5; ++i)
         {
-            int n =  rand.nextInt(MaxPick5)+1;
-            while( randNums.contains(n))
-            {
-                n = rand.nextInt(MaxPick5)+1;
+            int num = rand.nextInt(100); // no number is favored when modding by multiple of 10
+            ++num; // increment randomInt by one since random number chosen was 0 indexed
+
+            // continue randomly generating number if:
+            // a. out of range, b. already chosen
+            while (num > MaxPick5 || randNums.contains(num)) {
+                num = rand.nextInt(100);
+                ++num;
             }
-            randNums.add( n );
+
+            randNums.add(num); // add number
+
         }
         Collections.sort(randNums);
 
-        randNums.add(rand.nextInt(MaxMega)+1 );
+        // randomly generate megaball
+        int num = rand.nextInt(100);
+        ++num;
+        while ( num > MaxMega ) {
+            num = rand.nextInt(100);
+            ++num;
+        }
+
+        randNums.add(num); // add number
 
         return randNums;
     }
@@ -110,7 +127,7 @@ public class GenerateNumbers
             for (int i = 0; i < 5; ++i)
             {
                 int num = rand.nextInt(100); // no number is favored when modding by multiple of 10
-                ++num; // increment randomInt by one since random number chosen was between 0 -> 74
+                ++num; // increment randomInt by one since random number chosen was 0 indexed
 
                 // continue randomly generating number if:
                 // a. out of range, b. number has been picked above expected ratio, c. already chosen
@@ -160,7 +177,6 @@ public class GenerateNumbers
 
         // generate Pick 5 numbers
         double ratio = 5.0 / MaxPick5;
-        print("asdfasdfasdfadf"+ratio);
         for(Map.Entry<Integer, Integer> e : pick5stats.entrySet())
         {
             if( e.getValue()/numOfLottos < ratio )
@@ -174,7 +190,6 @@ public class GenerateNumbers
 
         // generate Mega Ball numbers
         ratio = 1.0 / MaxMega;
-        print("asdfasdfasdfadf"+ratio);
         for(Map.Entry<Integer, Integer> e : megaBstats.entrySet())
         {
             if( e.getValue()/numOfLottos < ratio )
