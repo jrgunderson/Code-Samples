@@ -104,12 +104,12 @@ public class OnePlayActivity extends AppCompatActivity {
     void fillBalls()
     {
         balls = new ArrayList<>();
-        balls.add( (TextView) findViewById(R.id.ball1) );
-        balls.add( (TextView) findViewById(R.id.ball2) );
-        balls.add( (TextView) findViewById(R.id.ball3) );
-        balls.add( (TextView) findViewById(R.id.ball4) );
-        balls.add( (TextView) findViewById(R.id.ball5) );
-        balls.add( (TextView) findViewById(R.id.megaball) );
+        balls.add(  findViewById(R.id.ball1) );
+        balls.add(  findViewById(R.id.ball2) );
+        balls.add(  findViewById(R.id.ball3) );
+        balls.add(  findViewById(R.id.ball4) );
+        balls.add(  findViewById(R.id.ball5) );
+        balls.add(  findViewById(R.id.megaball) );
     }
 
     // add lotto ticket TextViews to an array
